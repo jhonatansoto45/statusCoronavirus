@@ -40,6 +40,8 @@ $statusCoronavirus-theme: mat.define-light-theme(
 @include mat.all-component-themes($statusCoronavirus-theme);
 
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap");
+
 :root {
   --primary-color: #00e5f0;
   --secondary-color: #24315b;
@@ -52,7 +54,7 @@ body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 .container {
