@@ -1,0 +1,99 @@
+<app-header></app-header>
+<section class="information container">
+  <h1 class="information__title">
+    Mantente informado de los datos actuales del virus que paralizo el mundo.
+  </h1>
+  <p class="information__description">
+    La pandemia ha afectado muchas partes del mundo. Afectando así ámbitos de la
+    vida, sectores productivos, servicios, en cada rincon, pero... se ha ido
+    superando progresivamente de la mejor manera, de las cuales nos sigue
+    afectando pero no de la misma forma. Aquí veras toda la información
+    referente al covid.
+  </p>
+  <a
+    href="https://www.ins.gov.co/Noticias/paginas/coronavirus.aspx"
+    target="__blank"
+    class="information__cta"
+    >Conoce más</a
+  >
+</section>
+
+<section class="status">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1440 320"
+    class="status__wave"
+  >
+    <path
+      fill="#24315b"
+      fill-opacity="1"
+      d="M0,224L48,192C96,160,192,96,288,101.3C384,107,480,181,576,202.7C672,224,768,192,864,181.3C960,171,1056,181,1152,181.3C1248,181,1344,171,1392,165.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+    ></path>
+  </svg>
+  <article class="status__description">
+    <h1 class="status__title">¿Qué es el Coronavirus?</h1>
+    <div class="status__content container">
+      <div class="status__article">
+        <p class="status__paragraph">
+          La enfermedad por coronavirus (COVID‑19) es una enfermedad infecciosa
+          provocada por el virus SARS-CoV-2. La mayoría de las personas que
+          padecen COVID‑19 sufren síntomas de intensidad leve a moderada y se
+          recuperan sin necesidad de tratamientos especiales. Sin embargo,
+          algunas personas desarrollan casos graves y necesitan atención médica.
+        </p>
+      </div>
+      <figure class="status__img">
+        <img
+          src="../../../../assets/images/coronavirus.jpg"
+          alt="coronavirus"
+          class="status__picture"
+        />
+        <figcaption>
+          Los expertos coinciden en que nunca se había visto un virus como el
+          SARS-CoV-2. (BBC News Mundo. María Elena Navas)
+        </figcaption>
+      </figure>
+    </div>
+  </article>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1440 320"
+    class="status__wave"
+  >
+    <path
+      fill="#24315b"
+      fill-opacity="1"
+      d="M0,224L48,192C96,160,192,96,288,101.3C384,107,480,181,576,202.7C672,224,768,192,864,181.3C960,171,1056,181,1152,181.3C1248,181,1344,171,1392,165.3L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+    ></path>
+  </svg>
+</section>
+
+<section class="news container">
+  <h2 class="news__title">¿Qué pasa en este momento?</h2>
+  <div class="news__card">
+    <ng-container *ngIf="loading; then spinner; else card"></ng-container>
+  </div>
+</section>
+
+<ng-template #spinner>
+  <div>
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
+
+<ng-template #card>
+  <div *ngFor="let item of listadoNoticias" class="news__card__item">
+    <figure class="news__card__img">
+      <img
+        [src]="item.urlToImage"
+        [alt]="item.reference"
+        class="news__card__picture"
+      />
+    </figure>
+    <div class="news__card__content">
+      <h3 class="news__card__title">{{ item.title }}</h3>
+      <p class="news__card__paragraph">{{ item.content }}</p>
+      <a [href]="item.link" target="__blank" class="news__card__cta">Ver más</a>
+    </div>
+  </div>
+</ng-template>
