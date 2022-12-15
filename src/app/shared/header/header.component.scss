@@ -4,6 +4,16 @@
   align-items: center;
 }
 
+.header {
+  position: fixed;
+  top: 0;
+  background-color: var(--secondary-color);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  height: 150px;
+  width: 100%;
+  opacity: 0.97;
+}
+
 .header__picture {
   width: 100px;
 }
@@ -26,7 +36,6 @@
     background-color: var(--secondary-color);
     color: #fff;
     font-weight: 500;
-    border: 2px solid var(--secondary-color);
     border-radius: var(--border-radius);
     transition: 0.3s;
   }
