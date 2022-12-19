@@ -90,7 +90,7 @@ figcaption {
 
 .news__card {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -102,12 +102,13 @@ figcaption {
 
 .news__card__item {
   width: 250px;
-  height: 350px;
+  height: 450px;
   border-radius: var(--border-radius);
 }
 
 .news__card__img {
   width: 100%;
+  height: 150px;
 
   .news__card__picture {
     width: 100%;
@@ -121,14 +122,18 @@ figcaption {
 }
 
 .news__card__title {
+  height: 74px;
   font-size: 1rem;
   font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .news__card__paragraph {
-  height: 10px;
+  margin: 10px 0 10px;
+  height: 75px;
+  overflow: hidden;
   text-overflow: ellipsis;
-  white-space: wrap;
 }
 
 .news__card__cta {

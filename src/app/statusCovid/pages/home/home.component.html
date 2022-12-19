@@ -91,8 +91,8 @@
       />
     </figure>
     <div class="news__card__content">
-      <h3 class="news__card__title">{{ item.title }}</h3>
-      <p class="news__card__paragraph">{{ item.content }}</p>
+      <h3 class="news__card__title" [title]="item.title">{{ item.title }}</h3>
+      <p class="news__card__paragraph" [title]="item.content" >{{ item.content }}</p>
       <a [href]="item.link" target="__blank" class="news__card__cta">Ver más</a>
     </div>
   </div>
