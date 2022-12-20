@@ -70,9 +70,7 @@
 
 <section class="news container">
   <h2 class="news__title">¿Qué pasa en este momento?</h2>
-  <div class="news__card">
-    <ng-container *ngIf="loading; then spinner; else card"></ng-container>
-  </div>
+  <ng-container *ngIf="loading; then spinner; else card"></ng-container>
 </section>
 
 <ng-template #spinner>
@@ -82,18 +80,24 @@
 </ng-template>
 
 <ng-template #card>
-  <div *ngFor="let item of listadoNoticias" class="news__card__item">
-    <figure class="news__card__img">
-      <img
-        [src]="item.urlToImage"
-        [alt]="item.reference"
-        class="news__card__picture"
-      />
-    </figure>
-    <div class="news__card__content">
-      <h3 class="news__card__title" [title]="item.title">{{ item.title }}</h3>
-      <p class="news__card__paragraph" [title]="item.content" >{{ item.content }}</p>
-      <a [href]="item.link" target="__blank" class="news__card__cta">Ver más</a>
+  <div class="news__card">
+    <div *ngFor="let item of listadoNoticias" class="news__card__item">
+      <figure class="news__card__img">
+        <img
+          [src]="item.urlToImage"
+          [alt]="item.reference"
+          class="news__card__picture"
+        />
+      </figure>
+      <div class="news__card__content">
+        <h3 class="news__card__title" [title]="item.title">{{ item.title }}</h3>
+        <p class="news__card__paragraph" [title]="item.content">
+          {{ item.content }}
+        </p>
+        <a [href]="item.link" target="__blank" class="news__card__cta"
+          >Ver más</a
+        >
+      </div>
     </div>
   </div>
 </ng-template>

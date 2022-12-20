@@ -22,6 +22,6 @@ export class HomeComponent implements OnInit {
   getNews() {
     this.loading = true;
     this.statusService.getNews();
-    this.loading = false;
+    //this.loading = false;
   }
 }

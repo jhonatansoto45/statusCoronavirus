@@ -27,11 +27,7 @@ export class StatusService {
         'https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/news/get-coronavirus-news/0',
         { headers: this.headers }
       )
-      .subscribe((list: any) => {
-        this.listadoNews = list.news;
-        console.log(this.listadoNews);
-
-      });
+      .subscribe((list: any) => (this.listadoNews = list.news));
   }
 
   getData(filter: string): Observable<any> {

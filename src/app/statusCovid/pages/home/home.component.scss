@@ -1,5 +1,6 @@
 .information {
   height: 85vh;
+  margin-top: 66px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,7 +16,7 @@
 
 .information__description {
   text-align: center;
-  width: 1000px;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -47,7 +48,7 @@
 }
 
 .status__title {
-  font-size: 3.5rem;
+  font-size: 3rem;
   text-align: center;
   width: 100%;
   margin: 0 auto;
@@ -62,6 +63,7 @@
 
 .status__article {
   width: 50%;
+  flex: 1 1 auto;
 }
 
 .status__paragraph {
@@ -87,7 +89,6 @@ figcaption {
 }
 
 //* CARDS
-
 .news__card {
   display: flex;
   justify-content: space-between;

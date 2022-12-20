@@ -42,4 +42,4 @@ testem.log
 Thumbs.db
 
 #ApiKey RapidApi
-./environments/apiKey.ts
+/environments/apiKey.ts
