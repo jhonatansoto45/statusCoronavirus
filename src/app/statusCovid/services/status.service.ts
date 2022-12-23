@@ -1,6 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { ListDataWorld, Noticias } from '../../interfaces/interfaces';
 import { apiKey } from '../../../environments/environment';
 
