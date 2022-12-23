@@ -1,0 +1,33 @@
+
+.canvas {
+  width: 500px !important;
+  height: 500px !important;
+}
+
+
+.newDeaths__wave {
+  display: block;
+}
+
+.newDeaths__article {
+  background-color: var(--secondary-color);
+}
+
+.newDeaths__contain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 150px;
+}
+
+.newDeaths__title {
+  color: #fff;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.newDeaths__paragraph {
+  color: #fff;
+  font-size: 1.1rem;
+}

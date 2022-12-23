@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ListDataWorld } from '../../../interfaces/interfaces';
 import { StatusService } from '../../services/status.service';
 @Component({
   selector: 'app-world',
@@ -6,19 +7,19 @@ import { StatusService } from '../../services/status.service';
   styleUrls: ['./world.component.scss'],
 })
 export class WorldComponent implements OnInit {
-  readonly textBanner: string = 'Mundial';
-  readonly routeImgBanner: string =
-    '../../../../assets/images/banner/world.avif';
+  readonly filter: string = 'world';
+
+  listDataWorld: ListDataWorld[] = [];
+
   constructor(private statusService: StatusService) {}
 
   ngOnInit(): void {
     this.getDataWorld();
   }
 
-  getDataWorld(): void {
-    const filter: string = 'world';
-    this.statusService.getData(filter).subscribe((response) => {
-      console.log(response, 'data');
-    });
+  private getDataWorld() {
+    this.statusService
+      .getData(this.filter)
+      .subscribe((data: any) => (this.listDataWorld = data));
   }
 }

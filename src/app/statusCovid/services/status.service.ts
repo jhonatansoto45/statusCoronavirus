@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Noticias } from '../../interfaces/interfaces';
+import { ListDataWorld, Noticias } from '../../interfaces/interfaces';
 import { apiKey } from '../../../environments/environment';
 
 @Injectable({
@@ -9,6 +9,7 @@ import { apiKey } from '../../../environments/environment';
 })
 export class StatusService {
   private listadoNews: Noticias[] = [];
+  private listDataWorld: ListDataWorld[] = [];
 
   //? CAMBIAR APIKEY SI SE DESEA CON OTROS USUARIO
   private headers: HttpHeaders = new HttpHeaders()
@@ -21,6 +22,10 @@ export class StatusService {
     return [...this.listadoNews];
   }
 
+  get listadoWorld() {
+    return [...this.listDataWorld];
+  }
+
   getNews(): void {
     this.http
       .get<Noticias>(
@@ -30,8 +35,8 @@ export class StatusService {
       .subscribe((list: any) => (this.listadoNews = list.news));
   }
 
-  getData(filter: string): Observable<any> {
-    return this.http.get<any[]>(
+  getData(filter: string) {
+    return this.http.get<ListDataWorld[]>(
       `https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/${filter}`,
       { headers: this.headers }
     );

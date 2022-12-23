@@ -16,7 +16,7 @@ import { StatusCovidModule } from './statusCovid/status-covid.module';
     BrowserAnimationsModule,
     HttpClientModule,
     SharedModule,
-    StatusCovidModule
+    StatusCovidModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

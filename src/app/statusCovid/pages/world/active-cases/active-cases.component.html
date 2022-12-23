@@ -1,0 +1,43 @@
+<section class="active container">
+  <h1 class="active__title">Casos actuales</h1>
+  <article class="active__article">
+    <div>
+      <canvas
+        baseChart
+        class="canvas"
+        [data]="pieChartDataActive"
+        [options]="pieChartOptionsActive"
+        [type]="pieChartType"
+      >
+      </canvas>
+    </div>
+    <div class="active__description">
+      <h3 class="active__subtitle">Acerca de estos datos</h3>
+      <p class="active__paragraph">
+        Los informes pueden variar según la ubicación Es posible que no se
+        reflejen todos los casos nuevos; por ejemplo, si algunas zonas no han
+        publicado sus datos aún o no lo han hecho recientemente. Dado que la
+        disponibilidad de los datos varía según la ubicación, es posible que los
+        periodos de los datos de 14 días empiecen en fechas distintas. Se
+        incluyen los casos confirmados y los probables En los recuentos totales,
+        se incluyen los casos confirmados y los probables de algunas
+        ubicaciones. Los funcionarios del servicio de salud pública identifican
+        los casos probables y utilizan los criterios que han desarrollado las
+        autoridades gubernamentales. Se actualizan constantemente a partir de
+        recursos de todo el mundo Los datos proceden de
+        <a
+          class="active__link"
+          href="https://en.wikipedia.org/wiki/COVID-19_pandemic"
+          target="__blank"
+          >Wikipedia</a
+        >
+        , departamentos gubernamentales de sanidad, The New York Times y otras
+        fuentes autorizadas, según se indique. Pueden ser distintos de los que
+        se muestran en otros sitios web y otras fuentes Hay varias fuentes que
+        registran y agregan datos sobre el coronavirus. Estas fuentes actualizan
+        la información en momentos distintos y pueden utilizar métodos
+        diferentes para obtener los datos.
+      </p>
+    </div>
+  </article>
+</section>

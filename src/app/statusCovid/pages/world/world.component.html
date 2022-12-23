@@ -1,1 +1,21 @@
-<app-banner [text]="textBanner" [routeImage]="routeImgBanner"></app-banner>
+<!-- <app-banner [text]="textBanner" [routeImage]="routeImgBanner"></app-banner> -->
+<section class="state container">
+  <article class="state__article">
+    <h1 class="state__title">¿Como es el estado del covid?</h1>
+    <p class="state__paragraph">
+      Aquí podremos observar el <strong>estado actual</strong> de los que pasa
+      en el mundo referente al covid. En un listado de lo que ha sido más
+      importante y que ha impactado en los hogares de todos los habitantes de
+      <strong>diferentes regiones:</strong>
+    </p>
+    <ol class="state__list">
+      <li class="state__item">Casos activos y nuevos casos.</li>
+      <li class="state__item">Nuevas muertes y críticos.</li>
+      <li class="state__item">Total casos generales.</li>
+    </ol>
+  </article>
+</section>
+
+<app-active-cases [listData]="listDataWorld"></app-active-cases>
+<app-death-cases [listData]="listDataWorld"></app-death-cases>
+<app-general-cases [listData]="listDataWorld"></app-general-cases>

@@ -1,0 +1,18 @@
+<section class="general container">
+  <h1 class="general__title">Datos Generales</h1>
+  <article class="general__article">
+    <p class="general__paragraph">
+      Vista general de todos los datos importantes actualmente con el covid 19.
+      Informes a nivel mundial de los nuevos casos, muertes, personas criticas,
+      etc...
+    </p>
+    <canvas
+      baseChart
+      class="chart"
+      [data]="pieChartDataGeneral"
+      [options]="pieChartOptionsGeneral"
+      [type]="pieChartType"
+    >
+    </canvas>
+  </article>
+</section>
