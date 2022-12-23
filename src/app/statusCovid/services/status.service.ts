@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Noticias } from '../../interfaces/interfaces';
-import { apiKey } from '../../../environments/apikey';
+import { apiKey } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',

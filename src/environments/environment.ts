@@ -6,6 +6,11 @@ export const environment = {
   production: false
 };
 
+export const apiKey = {
+  key: '7791a3c849mshad33dd69a88c39ep12770cjsn8af7643406d4',
+  host: 'vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com',
+};
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

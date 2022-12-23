@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule , CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { StatusCovidRoutingModule } from './status-covid-routing.module';
@@ -16,11 +16,18 @@ import { MaterialModule } from '../shared/material/material.module';
     ContinentComponent,
     HomeComponent,
   ],
+  exports: [
+    WorldComponent,
+    CountriesComponent,
+    ContinentComponent,
+    HomeComponent,
+  ],
   imports: [
     CommonModule,
     StatusCovidRoutingModule,
     MaterialModule,
     SharedModule,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StatusCovidModule {}

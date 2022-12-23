@@ -9,3 +9,10 @@ export interface Noticias {
   content:             string;
   reference:           string;
 }
+
+export enum HeaderItem{
+  home,
+  world,
+  countries,
+  continent
+}
