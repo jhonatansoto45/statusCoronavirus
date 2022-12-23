@@ -11,6 +11,7 @@ export class AppComponent {
   constructor(private router: Router) {}
 
   onClickedItem(item: HeaderItem): void {
+    this.scrollTop();
     switch (item) {
       case HeaderItem.home:
         this.router.navigateByUrl('inicio');
@@ -25,5 +26,12 @@ export class AppComponent {
         this.router.navigateByUrl('continentes');
         break;
     }
+  }
+
+  scrollTop(): void {
+    window.scrollTo({
+      behavior: 'smooth',
+      top: 0,
+    });
   }
 }
