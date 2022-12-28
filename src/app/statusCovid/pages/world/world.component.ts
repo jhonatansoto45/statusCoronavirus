@@ -19,7 +19,7 @@ export class WorldComponent implements OnInit {
 
   private getDataWorld() {
     this.statusService
-      .getData(this.filter)
+      .getData()
       .subscribe((data: any) => (this.listDataWorld = data));
   }
 }

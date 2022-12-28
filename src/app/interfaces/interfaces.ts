@@ -39,6 +39,26 @@ export interface ListDataWorld {
   TotCases_1M_Pop:      number;
 }
 
+export interface Countries {
+  Country:              string;
+  TwoLetterSymbol:      string;
+  ThreeLetterSymbol:    string;
+  Infection_Risk:       number;
+  Case_Fatality_Rate:   number;
+  Test_Percentage:      number;
+  Recovery_Proporation: number;
+  TotalCases:           number;
+  NewCases:             number;
+  TotalDeaths:          number;
+  NewDeaths:            number;
+  TotalRecovered:       number;
+  NewRecovered:         number;
+  ActiveCases:          number;
+  TotalTests:           number;
+  Population:           number;
+  Serious_Critical:     number;
+}
+
 
 export enum HeaderItem{
   home,

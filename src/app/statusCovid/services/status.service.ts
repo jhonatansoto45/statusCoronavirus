@@ -1,6 +1,11 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ListDataWorld, Noticias } from '../../interfaces/interfaces';
+import { Observable } from 'rxjs';
+import {
+  Countries,
+  ListDataWorld,
+  Noticias,
+} from '../../interfaces/interfaces';
 import { apiKey } from '../../../environments/environment';
 
 @Injectable({
@@ -14,6 +19,9 @@ export class StatusService {
   private headers: HttpHeaders = new HttpHeaders()
     .set('X-RapidAPI-Key', apiKey.key)
     .set('X-RapidAPI-Host', apiKey.host);
+
+  private baseUri: string =
+    'https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/';
 
   constructor(private http: HttpClient) {}
 
@@ -34,10 +42,15 @@ export class StatusService {
       .subscribe((list: any) => (this.listadoNews = list.news));
   }
 
-  getData(filter: string) {
-    return this.http.get<ListDataWorld[]>(
-      `https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/${filter}`,
-      { headers: this.headers }
-    );
+  getData() {
+    return this.http.get<ListDataWorld[]>(`${this.baseUri}world`, {
+      headers: this.headers,
+    });
+  }
+
+  getCountries(): Observable<Countries[]> {
+    return this.http.get<Countries[]>(`${this.baseUri}countries`, {
+      headers: this.headers,
+    });
   }
 }

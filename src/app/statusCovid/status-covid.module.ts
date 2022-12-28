@@ -1,7 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { WorldComponent } from './pages/world/world.component';
 import { CountriesComponent } from './pages/countries/countries.component';
 import { ContinentComponent } from './pages/continent/continent.component';
 import { SharedModule } from '../shared/shared.module';

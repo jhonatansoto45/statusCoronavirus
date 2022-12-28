@@ -1,1 +1,58 @@
-<p>countries works!</p>
+<section class="countries container">
+  <h1 class="title">Estado del covid en cada país</h1>
+  <p class="countries__paragraph">
+    Aquí observarás el estado del covid en cada país con todos sus datos
+    específicos referente a los nuevos casos, número total de muertes, total de
+    pruebas, etc.
+  </p>
+</section>
+
+<section class="grid container">
+  <article class="grid__article">
+    <h1 class="title" [ngStyle]="{ 'margin.px': '50 0 50' }">Información</h1>
+  </article>
+  <ng-template *ngIf="loading; then grid; else spinner"></ng-template>
+</section>
+
+<ng-template #grid>
+  <table class="table" mat-table [dataSource]="dataCountries">
+    <ng-container matColumnDef="Country">
+      <th mat-header-cell *matHeaderCellDef>País</th>
+      <td mat-cell *matCellDef="let element">{{ element.Country }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="ActiveCases">
+      <th mat-header-cell *matHeaderCellDef>Total Casos</th>
+      <td mat-cell *matCellDef="let element">{{ element.ActiveCases }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="NewCases">
+      <th mat-header-cell *matHeaderCellDef>Nuevos casos</th>
+      <td mat-cell *matCellDef="let element">{{ element.NewCases }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="NewDeaths">
+      <th mat-header-cell *matHeaderCellDef>Nuevas muertes</th>
+      <td mat-cell *matCellDef="let element">{{ element.NewDeaths }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="TotalCases">
+      <th mat-header-cell *matHeaderCellDef>Total Casos</th>
+      <td mat-cell *matCellDef="let element">{{ element.TotalCases }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="TotalDeaths">
+      <th mat-header-cell *matHeaderCellDef>Total Muertes</th>
+      <td mat-cell *matCellDef="let element">{{ element.TotalDeaths }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns"></tr>
+  </table>
+</ng-template>
+
+<ng-template #spinner>
+  <div class="spinner">
+    <mat-spinner class="spinner__child"></mat-spinner>
+  </div>
+</ng-template>

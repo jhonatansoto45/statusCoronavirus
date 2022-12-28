@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter,Output } from '@angular/core';
 import { HeaderItem } from 'src/app/interfaces/interfaces';
 
 @Component({
