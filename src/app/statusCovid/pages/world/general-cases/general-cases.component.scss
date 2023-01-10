@@ -14,3 +14,14 @@
   height: 700px !important;
   margin: 0 auto;
 }
+
+@media screen and (max-width: 500px) {
+  .general__title {
+    font-size: 2.5rem;
+  }
+
+  .chart {
+    width: 280px !important;
+    height: 280px !important;
+  }
+}

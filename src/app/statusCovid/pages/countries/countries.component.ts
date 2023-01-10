@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Countries } from 'src/app/interfaces/interfaces';
+import { Countries } from '../../../interfaces/interfaces';
 import { StatusService } from '../../services/status.service';
 
 @Component({

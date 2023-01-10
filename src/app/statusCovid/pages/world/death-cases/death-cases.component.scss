@@ -1,9 +1,7 @@
-
 .canvas {
   width: 500px !important;
   height: 500px !important;
 }
-
 
 .newDeaths__wave {
   display: block;
@@ -17,6 +15,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   gap: 150px;
 }
 
@@ -30,4 +29,15 @@
 .newDeaths__paragraph {
   color: #fff;
   font-size: 1.1rem;
+}
+
+@media screen and (max-width: 500px) {
+  .canvas {
+    width: 300px !important;
+    height: 300px !important;
+  }
+
+  .newDeaths__title {
+    font-size: 2.5rem;
+  }
 }
