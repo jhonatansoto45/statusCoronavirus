@@ -1,5 +1,7 @@
 export const environment = {
-  production: true
+  production: true,
+  baseUrl:
+    'https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data',
 };
 
 export const apiKey = {

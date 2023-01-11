@@ -1,1 +1,240 @@
-<p>continent works!</p>
+<section class="continent container">
+  <h1 class="title">Estado del covid en cada continente</h1>
+  <p class="continent__paragraph">
+    Aquí observarás el estado del covid en cada continente con todos sus datos
+    específicos referente a los nuevos casos, número total de muertes, total de
+    pruebas, etc.
+  </p>
+</section>
+
+<section class="grid container">
+  <article class="grid__article">
+    <h1 class="title" [ngStyle]="{ 'margin.px': '50 0 50' }">
+      Datos de cada continente
+    </h1>
+  </article>
+  <mat-grid-list cols="3">
+    <mat-grid-tile>
+      <ng-template *ngIf="loading; then asia; else spinner"></ng-template>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <ng-template *ngIf="loading; then europa; else spinner"></ng-template>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <ng-template *ngIf="loading; then africa; else spinner"></ng-template>
+    </mat-grid-tile>
+    <br />
+    <mat-grid-tile>
+      <ng-template *ngIf="loading; then america; else spinner"></ng-template>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <ng-template *ngIf="loading; then oceania; else spinner"></ng-template>
+    </mat-grid-tile>
+  </mat-grid-list>
+</section>
+
+<ng-template #asia>
+  <h1 class="title" [ngStyle]="{ 'padding-right.px': '15' }">Asia</h1>
+  <div class="table">
+    <table mat-table [dataSource]="dataAsia">
+      <ng-container matColumnDef="Country">
+        <th mat-header-cell *matHeaderCellDef>País</th>
+        <td mat-cell *matCellDef="let element">{{ element.Country }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="ActiveCases">
+        <th mat-header-cell *matHeaderCellDef>Total Casos</th>
+        <td mat-cell *matCellDef="let element">{{ element.ActiveCases }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="NewCases">
+        <th mat-header-cell *matHeaderCellDef>Nuevos casos</th>
+        <td mat-cell *matCellDef="let element">{{ element.NewCases }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="NewDeaths">
+        <th mat-header-cell *matHeaderCellDef>Nuevas muertes</th>
+        <td mat-cell *matCellDef="let element">{{ element.NewDeaths }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="TotalCases">
+        <th mat-header-cell *matHeaderCellDef>Total Casos</th>
+        <td mat-cell *matCellDef="let element">{{ element.TotalCases }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="TotalDeaths">
+        <th mat-header-cell *matHeaderCellDef>Total Muertes</th>
+        <td mat-cell *matCellDef="let element">{{ element.TotalDeaths }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="columns"></tr>
+      <tr mat-row *matRowDef="let row; columns: columns"></tr>
+    </table>
+  </div>
+</ng-template>
+
+<ng-template #europa>
+  <h1 class="title" [ngStyle]="{ 'padding-right.px': '15' }">Europa</h1>
+  <div class="table">
+    <table mat-table [dataSource]="dataEuropa">
+      <ng-container matColumnDef="Country">
+        <th mat-header-cell *matHeaderCellDef>País</th>
+        <td mat-cell *matCellDef="let element">{{ element.Country }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="ActiveCases">
+        <th mat-header-cell *matHeaderCellDef>Total Casos</th>
+        <td mat-cell *matCellDef="let element">{{ element.ActiveCases }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="NewCases">
+        <th mat-header-cell *matHeaderCellDef>Nuevos casos</th>
+        <td mat-cell *matCellDef="let element">{{ element.NewCases }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="NewDeaths">
+        <th mat-header-cell *matHeaderCellDef>Nuevas muertes</th>
+        <td mat-cell *matCellDef="let element">{{ element.NewDeaths }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="TotalCases">
+        <th mat-header-cell *matHeaderCellDef>Total Casos</th>
+        <td mat-cell *matCellDef="let element">{{ element.TotalCases }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="TotalDeaths">
+        <th mat-header-cell *matHeaderCellDef>Total Muertes</th>
+        <td mat-cell *matCellDef="let element">{{ element.TotalDeaths }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="columns"></tr>
+      <tr mat-row *matRowDef="let row; columns: columns"></tr>
+    </table>
+  </div>
+</ng-template>
+
+<ng-template #africa>
+  <h1 class="title" [ngStyle]="{ 'padding-right.px': '15' }">África</h1>
+  <div class="table">
+    <table mat-table [dataSource]="dataAfrica">
+      <ng-container matColumnDef="Country">
+        <th mat-header-cell *matHeaderCellDef>País</th>
+        <td mat-cell *matCellDef="let element">{{ element.Country }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="ActiveCases">
+        <th mat-header-cell *matHeaderCellDef>Total Casos</th>
+        <td mat-cell *matCellDef="let element">{{ element.ActiveCases }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="NewCases">
+        <th mat-header-cell *matHeaderCellDef>Nuevos casos</th>
+        <td mat-cell *matCellDef="let element">{{ element.NewCases }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="NewDeaths">
+        <th mat-header-cell *matHeaderCellDef>Nuevas muertes</th>
+        <td mat-cell *matCellDef="let element">{{ element.NewDeaths }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="TotalCases">
+        <th mat-header-cell *matHeaderCellDef>Total Casos</th>
+        <td mat-cell *matCellDef="let element">{{ element.TotalCases }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="TotalDeaths">
+        <th mat-header-cell *matHeaderCellDef>Total Muertes</th>
+        <td mat-cell *matCellDef="let element">{{ element.TotalDeaths }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="columns"></tr>
+      <tr mat-row *matRowDef="let row; columns: columns"></tr>
+    </table>
+  </div>
+</ng-template>
+
+<ng-template #america>
+  <h1 class="title" [ngStyle]="{ 'padding-right.px': '15' }">America</h1>
+  <div class="table">
+    <table mat-table [dataSource]="dataAmerica">
+      <ng-container matColumnDef="Country">
+        <th mat-header-cell *matHeaderCellDef>País</th>
+        <td mat-cell *matCellDef="let element">{{ element.Country }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="ActiveCases">
+        <th mat-header-cell *matHeaderCellDef>Total Casos</th>
+        <td mat-cell *matCellDef="let element">{{ element.ActiveCases }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="NewCases">
+        <th mat-header-cell *matHeaderCellDef>Nuevos casos</th>
+        <td mat-cell *matCellDef="let element">{{ element.NewCases }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="NewDeaths">
+        <th mat-header-cell *matHeaderCellDef>Nuevas muertes</th>
+        <td mat-cell *matCellDef="let element">{{ element.NewDeaths }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="TotalCases">
+        <th mat-header-cell *matHeaderCellDef>Total Casos</th>
+        <td mat-cell *matCellDef="let element">{{ element.TotalCases }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="TotalDeaths">
+        <th mat-header-cell *matHeaderCellDef>Total Muertes</th>
+        <td mat-cell *matCellDef="let element">{{ element.TotalDeaths }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="columns"></tr>
+      <tr mat-row *matRowDef="let row; columns: columns"></tr>
+    </table>
+  </div>
+</ng-template>
+
+<ng-template #oceania>
+  <h1 class="title" [ngStyle]="{ 'padding-right.px': '15' }">Oceanía</h1>
+  <div class="table">
+    <table mat-table [dataSource]="dataOceania">
+      <ng-container matColumnDef="Country">
+        <th mat-header-cell *matHeaderCellDef>País</th>
+        <td mat-cell *matCellDef="let element">{{ element.Country }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="ActiveCases">
+        <th mat-header-cell *matHeaderCellDef>Total Casos</th>
+        <td mat-cell *matCellDef="let element">{{ element.ActiveCases }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="NewCases">
+        <th mat-header-cell *matHeaderCellDef>Nuevos casos</th>
+        <td mat-cell *matCellDef="let element">{{ element.NewCases }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="NewDeaths">
+        <th mat-header-cell *matHeaderCellDef>Nuevas muertes</th>
+        <td mat-cell *matCellDef="let element">{{ element.NewDeaths }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="TotalCases">
+        <th mat-header-cell *matHeaderCellDef>Total Casos</th>
+        <td mat-cell *matCellDef="let element">{{ element.TotalCases }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="TotalDeaths">
+        <th mat-header-cell *matHeaderCellDef>Total Muertes</th>
+        <td mat-cell *matCellDef="let element">{{ element.TotalDeaths }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="columns"></tr>
+      <tr mat-row *matRowDef="let row; columns: columns"></tr>
+    </table>
+  </div>
+</ng-template>
+
+<ng-template #spinner>
+  <div class="spinner">
+    <mat-spinner class="spinner__child"></mat-spinner>
+  </div>
+</ng-template>

@@ -6,7 +6,7 @@ import {
   ListDataWorld,
   Noticias,
 } from '../../interfaces/interfaces';
-import { apiKey } from '../../../environments/environment';
+import { apiKey, environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -20,8 +20,7 @@ export class StatusService {
     .set('X-RapidAPI-Key', apiKey.key)
     .set('X-RapidAPI-Host', apiKey.host);
 
-  private baseUri: string =
-    'https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/';
+  private baseUri: string = environment.baseUrl;
 
   constructor(private http: HttpClient) {}
 
@@ -43,13 +42,19 @@ export class StatusService {
   }
 
   getData() {
-    return this.http.get<ListDataWorld[]>(`${this.baseUri}world`, {
+    return this.http.get<ListDataWorld[]>(`${this.baseUri}/world`, {
       headers: this.headers,
     });
   }
 
   getCountries(): Observable<Countries[]> {
-    return this.http.get<Countries[]>(`${this.baseUri}countries`, {
+    return this.http.get<Countries[]>(`${this.baseUri}/countries`, {
+      headers: this.headers,
+    });
+  }
+
+  getContinent(continente: string): Observable<Countries[]> {
+    return this.http.get<Countries[]>(`${this.baseUri}/${continente}`, {
       headers: this.headers,
     });
   }
